@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  yield: 1
+  preparation_time: 1
+  ingredients: MyText
+  instructions: MyText
+  photo: MyString
+  cuisine_id: 
+
+two:
+  name: MyString
+  yield: 1
+  preparation_time: 1
+  ingredients: MyText
+  instructions: MyText
+  photo: MyString
+  cuisine_id: 
