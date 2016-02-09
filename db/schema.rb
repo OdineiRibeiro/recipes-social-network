@@ -11,9 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209173127) do
+ActiveRecord::Schema.define(version: 20160209202749) do
 
   create_table "cuisines", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "descriptions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "difficulties", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fooddescriptions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "foodtypes", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -29,8 +53,12 @@ ActiveRecord::Schema.define(version: 20160209173127) do
     t.integer  "cuisine_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "difficulty_id"
+    t.integer  "description_id"
   end
 
   add_index "recipes", ["cuisine_id"], name: "index_recipes_on_cuisine_id"
+  add_index "recipes", ["description_id"], name: "index_recipes_on_description_id"
+  add_index "recipes", ["difficulty_id"], name: "index_recipes_on_difficulty_id"
 
 end
