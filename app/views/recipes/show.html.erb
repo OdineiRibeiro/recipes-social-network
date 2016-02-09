@@ -1,0 +1,11 @@
+<h1>Exibindo Receita</h1>
+
+<p><b>Nome: </b><%= @recipe.name %></p>
+<p><b>Rendimento: </b><%= @recipe.yield %></p>
+<p><b>Tempo de preparo: </b><%= @recipe.preparation_time %></p>
+<p><b>Ingredientes: </b><%= @recipe.ingredients %></p>
+<p><b>Instruções: </b><%= @recipe.instructions %></p>
+<p><b>Cozinha: </b><%= @recipe.cuisine.name %></p>
+<p><b>Foto: </b><%= @recipe.photo %></p>
+
+<%= link_to 'Pagina inicial', action: 'index' %>

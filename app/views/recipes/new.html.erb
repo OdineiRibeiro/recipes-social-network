@@ -1,0 +1,12 @@
+<h1>Adicionando Receitas</h1>
+
+<%= form_for @recipe do |f| %>
+  Nome: <br><%= f.text_field :name %><br/>
+  Rendimento: <br><%= f.text_field :yield %><br/>
+  Tempo de preparo: <br><%= f.text_field :preparation_time %><br/>
+  Ingredientes: <br><%= f.text_area :ingredients %><br/>
+  Modo de preparo: <br><%= f.text_area :instructions %><br/>
+  Foto: <br><%= f.text_field :photo %><br/>
+  Cozinha: <br><%= f.collection_select(:cuisine_id, @cuisines, :id, :name, include_blank: true) %></p>
+  <%= f.submit %>
+<% end %>
