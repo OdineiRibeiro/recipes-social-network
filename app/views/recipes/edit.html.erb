@@ -1,11 +1,10 @@
-<h1>Adicionando Receitas</h1>
+<h1>Editando Receitas</h1>
 
 <ul>
 <% @recipe.errors.full_messages.each do |msg| %>
   <li><%= msg %></li>
 <% end %>
 </ul>
-
 
 <%= form_for @recipe do |f| %>
   Nome: <br><%= f.text_field :name %><br/>
@@ -22,3 +21,4 @@
 <% end %>
 
 <%= link_to 'Pagina inicial', action: 'index' %>
+<%= link_to 'Editar', action: 'edit' %>

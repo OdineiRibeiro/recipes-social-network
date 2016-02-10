@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
-  before_action :set_collections, only: [:new, :edit, :show]
+  before_action :set_collections, only: [:new, :edit, :show, :update, :create]
 
   def index
     @recipes = Recipe.order :name
@@ -13,7 +13,6 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-
     redirect_to action: "index"
   end
 
@@ -23,8 +22,24 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    @recipe.save
-    redirect_to(action: "show", id: @recipe)
+    if @recipe.save
+      redirect_to(action: "show", id: @recipe)
+    else
+      render action: "new"
+    end
+  end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update_attributes(recipe_params)
+      redirect_to(action: "show", id: @recipe)
+    else
+      render action: "edit"
+    end
   end
 
   private
@@ -33,6 +48,7 @@ class RecipesController < ApplicationController
     @cuisines = Cuisine.order :name
     @difficulties = Difficulty.all
     @descriptions = Description.all
+    @preferences = Preference.all
   end
 
   def set_recipe
@@ -40,8 +56,9 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:cuisine_id, :name, :yield,
-                                   :preparation_time, :ingredients, :instructions,
-                                   :photo, :difficulty_id, :description_id)
+    params.require(:recipe).permit(:name, :yield, :preparation_time,
+                                   :ingredients, :instructions, :photo,
+                                   :cuisine_id, :difficulty_id, :description_id,
+                                   :preference_id)
   end
 end
