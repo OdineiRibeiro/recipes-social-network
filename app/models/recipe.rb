@@ -22,5 +22,4 @@ class Recipe < ActiveRecord::Base
 
   belongs_to :preference
   validates_associated :preference
-
 end

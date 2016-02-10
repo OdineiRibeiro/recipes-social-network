@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    redirect_to action: "index"
+    redirect_to action: 'index'
   end
 
   def new
@@ -23,9 +23,9 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
-      redirect_to(action: "show", id: @recipe)
+      redirect_to(action: 'show', id: @recipe)
     else
-      render action: "new"
+      render action: 'new'
     end
   end
 
@@ -36,9 +36,9 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     if @recipe.update_attributes(recipe_params)
-      redirect_to(action: "show", id: @recipe)
+      redirect_to(action: 'show', id: @recipe)
     else
-      render action: "edit"
+      render action: 'edit'
     end
   end
 
