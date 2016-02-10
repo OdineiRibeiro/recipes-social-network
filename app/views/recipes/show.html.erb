@@ -8,8 +8,8 @@
 <p><b>Cozinha: </b><%= @recipe.cuisine.name %></p>
 <p><b>Dificuldade: </b><%= @recipe.difficulty.name %></p>
 <p><b>Tipo: </b><%= @recipe.description.name %></p>
-<p><b>Tipo: </b><%= @recipe.preference.name %></p>
-<p><b>Foto: </b><%= @recipe.photo %></p>
+<p><b>Preferencia: </b><%= @recipe.preference.name %></p>
+<p><b>Foto: </b><%= image_tag(@recipe.avatar)%></p>
 
 <%= link_to 'Pagina inicial', action: 'index' %> -
 <%= link_to 'Editar', action: 'edit' %>

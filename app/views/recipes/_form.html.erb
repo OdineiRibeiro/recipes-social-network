@@ -1,0 +1,21 @@
+<ul>
+<% @recipe.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+</ul>
+
+<%= form_for @recipe do |f| %>
+  Nome: <br><%= f.text_field :name %><br/>
+  Rendimento: <br><%= f.text_field :yield %><br/>
+  Tempo de preparo: <br><%= f.text_field :preparation_time %><br/>
+  Ingredientes: <br><%= f.text_area :ingredients %><br/>
+  Modo de preparo: <br><%= f.text_area :instructions %><br/>
+  Cozinha: <br><%= f.collection_select(:cuisine_id, @cuisines, :id, :name, include_blank: true) %><br/>
+  Dificuldade: <br><%= f.collection_select(:difficulty_id, @difficulties, :id, :name, include_blank: true) %><br/>
+  Tipo: <br><%= f.collection_select(:description_id, @descriptions, :id, :name, include_blank: true) %><br/>
+  Preferência: <br><%= f.collection_select(:preference_id, @preferences, :id, :name, include_blank: true) %><br/>
+  Foto: <br><%= f.file_field :avatar %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Pagina inicial', action: 'index' %>

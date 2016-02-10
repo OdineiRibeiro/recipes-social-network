@@ -13,7 +13,6 @@
     <td><%= recipe.name %></td>
     <td><%= recipe.yield %></td>
     <td><%= recipe.preparation_time %></td>
-    <td><%= recipe.photo %></td>
     <td><%= recipe.cuisine.name %></td>
     <td><%= link_to 'Mostrar', action: 'show', id: recipe %></td>
     <td><%= link_to 'Deletar', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>

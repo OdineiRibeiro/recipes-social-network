@@ -1,4 +1,6 @@
 class Recipe < ActiveRecord::Base
+  mount_uploader :avatar, AvatarUploader
+
   validates_presence_of :name
   validates_presence_of :yield
   validates_presence_of :preparation_time
@@ -20,4 +22,5 @@ class Recipe < ActiveRecord::Base
 
   belongs_to :preference
   validates_associated :preference
+
 end
