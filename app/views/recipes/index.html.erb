@@ -1,22 +1,19 @@
 <h1>Cozinha de Guerrilha</h1>
 
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Redimento</th>
-    <th>Tempo de preparo</th>
-    <th>Cozinha</th>
-  </tr>
 <% @recipes.each do |recipe| %>
-  <tr>
-    <td><%= recipe.name %></td>
-    <td><%= recipe.yield %></td>
-    <td><%= recipe.preparation_time %></td>
-    <td><%= recipe.cuisine.name %></td>
-    <td><%= link_to 'Mostrar', action: 'show', id: recipe %></td>
-    <td><%= link_to 'Deletar', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class="floating-box">
+      <div class="inside-floating-box">
+      </div>
+      <ul class="food-information">
+          <li><%= recipe.name %></li>
+          <li>Preparo: <%= recipe.preparation_time %></li>
+          <li>Rendimento: <%= recipe.yield %></li>
+          <li>Cozinha: <%= recipe.cuisine.name %></li>
+          <li><%= link_to 'Mostrar', action: 'show', id: recipe %></li>
+          <li><%= link_to 'Deletar', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <ul>
+  </div>
 <% end %>
-</table>
 <br/>
+
 <%= link_to 'Novo', action: 'new' %>
