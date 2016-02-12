@@ -1,19 +1,19 @@
-<h1>Cozinha de Guerrilha</h1>
-
+<% 5.times do %>
 <% @recipes.each do |recipe| %>
   <div class="floating-box">
       <div class="inside-floating-box">
+        <%= image_tag(recipe.avatar) %>
       </div>
       <ul class="food-information">
           <li><%= recipe.name %></li>
           <li>Preparo: <%= recipe.preparation_time %></li>
           <li>Rendimento: <%= recipe.yield %></li>
           <li>Cozinha: <%= recipe.cuisine.name %></li>
-          <li><%= link_to 'Mostrar', action: 'show', id: recipe %></li>
+          <li><%= link_to 'Ver mais!', action: 'show', id: recipe %></li>
           <li><%= link_to 'Deletar', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></li>
       <ul>
   </div>
 <% end %>
-<br/>
+<% end %>
 
-<%= link_to 'Novo', action: 'new' %>
+<br/>
