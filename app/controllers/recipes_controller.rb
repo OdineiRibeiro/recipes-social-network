@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   before_action :set_collections, only: [:new, :edit, :show, :update, :create]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :create, :destroy]
 
   def index
     @recipes = Recipe.order :name
