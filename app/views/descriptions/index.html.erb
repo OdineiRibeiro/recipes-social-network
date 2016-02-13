@@ -1,0 +1,16 @@
+<table style="width:80%">
+  <tr>
+    <th>Id</th>
+    <th>Tipo de pratos</th>
+    <th></th>
+  </tr>
+
+<% @descriptions.each do |description| %>
+  <tr>
+    <td><%= description.id %></td>
+    <td><%= description.name %></td>
+    <td><%= link_to 'Editar tipo', action: 'edit', id: description %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'Cadastrar novo tipo', new_description_path %>

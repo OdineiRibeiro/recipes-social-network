@@ -13,7 +13,7 @@ class CuisinesController < ApplicationController
   def create
     @cuisine = Cuisine.new(cuisine_params)
     if @cuisine.save
-      redirect_to root_path
+      redirect_to cuisines_path
     else
       render action: 'new'
     end
@@ -26,7 +26,7 @@ class CuisinesController < ApplicationController
   def update
     @cuisine = Cuisine.find(params[:id])
     if @cuisine.update_attributes(cuisine_params)
-      redirect_to(action: 'index')
+      redirect_to cuisines_path
     else
       render action: 'edit'
     end

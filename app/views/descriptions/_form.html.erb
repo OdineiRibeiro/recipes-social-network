@@ -1,0 +1,13 @@
+<ul>
+<% @description.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+</ul>
+
+<%= form_for @description do |f| %>
+  Tipo: <br><%= f.text_field :name %><br/>
+  <%= f.submit %>
+<% end %>
+
+
+<%= link_to 'Pagina de tipos de prato', descriptions_path %>
