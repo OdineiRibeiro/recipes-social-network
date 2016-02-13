@@ -1,15 +1,30 @@
-<h1>Exibindo Receita</h1>
+<div class="show-recipe">
+  <ul class="recipe">
+    <li><h2><%= @recipe.name %></h2></li>
+    <li>Rendimento: <%= @recipe.yield %> porções</li>
+    <li>Tempo de preparo: <%= @recipe.preparation_time %> minutos</li>
+    <li>Dificuldade: <%= @recipe.difficulty.name %></li>
+    <li>Cozinha: <%= @recipe.cuisine.name %></li>
+    <li>Tipo: <%= @recipe.description.name %></li>
+    <li>Preferencia: <%= @recipe.preference.name %></li>
+  </ul>
 
-<p><b>Nome: </b><%= @recipe.name %></p>
-<p><b>Rendimento: </b><%= @recipe.yield %></p>
-<p><b>Tempo de preparo: </b><%= @recipe.preparation_time %></p>
-<p><b>Ingredientes: </b><%= @recipe.ingredients %></p>
-<p><b>Instruções: </b><%= @recipe.instructions %></p>
-<p><b>Cozinha: </b><%= @recipe.cuisine.name %></p>
-<p><b>Dificuldade: </b><%= @recipe.difficulty.name %></p>
-<p><b>Tipo: </b><%= @recipe.description.name %></p>
-<p><b>Preferencia: </b><%= @recipe.preference.name %></p>
-<p><b>Foto: </b><%= image_tag(@recipe.avatar)%></p>
+  <ul class="recipe">
+    <li><h2>Ingredientes</h2></li>
+    <li><%= @recipe.ingredients %></li>
+  </ul>
+</div>
 
-<%= link_to 'Pagina inicial', action: 'index' %> -
-<%= link_to 'Editar', action: 'edit' %>
+<div class="show-recipe">
+    <%= image_tag(@recipe.avatar)%>
+</div>
+
+<div class="after-show-recipe">
+  <ul class="recipe">
+    <li><h2>Modo de preparo</h2></li>
+    <li><%= @recipe.instructions %></li>
+    <li><br/><%= link_to 'Editar receita', action: 'edit' %></li>
+  </ul>
+
+
+</div>

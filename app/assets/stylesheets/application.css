@@ -171,4 +171,31 @@
   width: 100%;
   height: 100%;
 }
- /** FIM INDEX **/
+/** FIM INDEX **/
+
+/** COMEÇO SHOW **/
+
+.show-recipe
+{
+  float: left;
+  width: 40%;
+}
+
+.after-show-recipe
+{
+  display: inline-block;
+  width: 80%;
+  margin-right: 2%;
+}
+
+.recipe
+{
+  padding: 0;
+}
+
+.show-recipe img
+{
+  padding-top: 5%;
+}
+
+ /** FIM SHOW **/
