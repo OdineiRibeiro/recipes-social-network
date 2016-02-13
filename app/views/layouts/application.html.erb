@@ -24,14 +24,25 @@
               <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
             </div>
           </div>
+
           <div class="dropdown">
             <a href="#" class="dropbtn">Menu</a>
             <div class="dropdown-content" >
               <a href="#">Minhas Receitas</a>
-              <%= link_to 'Cadastrar Receitas', action: 'new' %>
+              <%= link_to 'Cadastrar Receitas', new_recipe_path %>
               <a href="#">Mensagens</a>
             </div>
           </div>
+
+          <% if current_user.admin == true %>
+            <div class="dropdown">
+              <a href="#login" class="dropbtn">Painel de controle</a>
+              <div class="dropdown-content" >
+                <%= link_to "Cozinhas", cuisines_path, :class => 'navbar-link'  %>
+              </div>
+            </div>
+          <% end %>
+
         <% else %>
           <div class="dropdown">
             <a href="#login" class="dropbtn">Login</a>
@@ -42,7 +53,6 @@
           </div>
         <% end %>
         </ul>
-      </ul>
     </nav>
 
     <article>

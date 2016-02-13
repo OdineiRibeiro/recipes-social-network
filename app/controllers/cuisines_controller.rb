@@ -1,6 +1,10 @@
 class CuisinesController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :create]
   before_action :is_admin
+
+  def index
+    @cuisines = Cuisine.order :name
+  end
 
   def new
     @cuisine = Cuisine.new
@@ -12,6 +16,19 @@ class CuisinesController < ApplicationController
       redirect_to root_path
     else
       render action: 'new'
+    end
+  end
+
+  def edit
+    @cuisine = Cuisine.find(params[:id])
+  end
+
+  def update
+    @cuisine = Cuisine.find(params[:id])
+    if @cuisine.update_attributes(cuisine_params)
+      redirect_to(action: 'index')
+    else
+      render action: 'edit'
     end
   end
 
