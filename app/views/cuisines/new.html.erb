@@ -1,0 +1,13 @@
+<ul>
+<% @cuisine.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+</ul>
+
+<%= form_for @cuisine do |f| %>
+  Nome: <br><%= f.text_field :name %><br/>
+  <%= f.submit %>
+<% end %>
+
+
+<%= link_to 'Pagina inicial', root_path %>
