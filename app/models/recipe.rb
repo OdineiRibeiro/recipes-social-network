@@ -10,6 +10,7 @@ class Recipe < ActiveRecord::Base
   validates_presence_of :difficulty_id
   validates_presence_of :description_id
   validates_presence_of :preference_id
+  validates_presence_of :user_id
 
   belongs_to :cuisine
   validates_associated :cuisine
@@ -22,4 +23,7 @@ class Recipe < ActiveRecord::Base
 
   belongs_to :preference
   validates_associated :preference
+
+  belongs_to :user
+  validates_associated :user
 end

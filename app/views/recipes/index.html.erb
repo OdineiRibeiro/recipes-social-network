@@ -33,7 +33,9 @@
             <li>Rendimento: <%= recipe.yield %></li>
             <li>Cozinha: <%= recipe.cuisine.name %></li>
             <li><%= link_to 'Ver mais!', recipe_path(recipe.id) %></li>
-            <li><%= link_to 'Deletar', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <% if user_signed_in? && current_user.id == recipe.user.id %>
+              <li><%= link_to 'Deletar', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <% end %>
         <ul>
     </div>
   <% end %>

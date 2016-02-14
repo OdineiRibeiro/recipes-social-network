@@ -7,6 +7,7 @@
     <li>Cozinha: <%= @recipe.cuisine.name %></li>
     <li>Tipo: <%= @recipe.description.name %></li>
     <li>Preferencia: <%= @recipe.preference.name %></li>
+    <li>Enviado por: <%= @recipe.user.email %></li>
   </ul>
 
   <ul class="recipe">
@@ -23,7 +24,9 @@
   <ul class="recipe">
     <li><h2>Modo de preparo</h2></li>
     <li><%= @recipe.instructions %></li>
-    <li><br/><%= link_to 'Editar receita', action: 'edit' %></li>
+    <% if user_signed_in? && current_user.id == @recipe.user.id %>
+      <li><br/><%= link_to 'Editar receita', action: 'edit' %></li>
+    <% end %>
   </ul>
 
 

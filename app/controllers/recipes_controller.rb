@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   before_action :set_collections, only: [:new, :edit, :show, :update, :create, :index]
   before_action :authenticate_user!, only: [:new, :edit, :update, :create, :destroy]
+  before_action :authenticate_owner, only: [:edit, :update, :destroy]
 
   def index
     #@recipes = Recipe.where('preference_id = ?', 3)
@@ -51,16 +52,23 @@ class RecipesController < ApplicationController
     @difficulties = Difficulty.all
     @descriptions = Description.all
     @preferences = Preference.all
+    @users = User.all
   end
 
   def set_recipe
     @recipe = Recipe.find(params[:id])
   end
 
+  def authenticate_owner
+    if current_user.id != @recipe.user_id
+      redirect_to root_path
+    end
+  end
+
   def recipe_params
     params.require(:recipe).permit(:name, :yield, :preparation_time,
                                    :ingredients, :instructions, :avatar,
                                    :cuisine_id, :difficulty_id, :description_id,
-                                   :preference_id)
+                                   :preference_id, :user_id)
   end
 end

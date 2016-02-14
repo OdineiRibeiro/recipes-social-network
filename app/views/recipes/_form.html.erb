@@ -14,7 +14,8 @@
   Dificuldade: <br><%= f.collection_select(:difficulty_id, @difficulties, :id, :name, include_blank: true) %><br/>
   Tipo: <br><%= f.collection_select(:description_id, @descriptions, :id, :name, include_blank: true) %><br/>
   Preferência: <br><%= f.collection_select(:preference_id, @preferences, :id, :name, include_blank: true) %><br/>
-  Foto: <br><%= f.file_field :avatar %>
+  Foto: <br><%= f.file_field :avatar %><br/>
+  <%= f.hidden_field :user_id, :value => current_user.id %><br/>
   <%= f.submit %>
 <% end %>
 
