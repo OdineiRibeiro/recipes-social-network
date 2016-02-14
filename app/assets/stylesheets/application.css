@@ -171,6 +171,18 @@
   width: 100%;
   height: 100%;
 }
+
+.last-recipes
+{
+  display: inline-block;
+  width: 40%;
+}
+
+.favorite-recipes
+{
+  display: inline-block;
+  width: 40%;
+}
 /** FIM INDEX **/
 
 /** COMEÇO SHOW **/
