@@ -1,7 +1,23 @@
+<div class="organize-recipes">
+  <dl>
+    <dt>Preferência</dt>
+      <% @preferences.first(3).each do |preference| %>
+        <dd><%= preference.name %></dd>
+      <% end %>
+    <dt>Tipo</dt>
+      <% @descriptions.first(3).each do |description| %>
+        <dd><%= description.name %></dd>
+      <% end %>
+    <dt>Cozinha</dt>
+    <% @cuisines.first(3).each do |cuisine| %>
+      <dd><%= cuisine.name %></dd>
+    <% end %>
+  </dl>
+</div>
+
 <div class="last-recipes">
 
   <h3>Ultimas receitas!</h3>
-  <% 5.times do %>
   <% @recipes.each do |recipe| %>
     <div class="floating-box">
         <div class="inside-floating-box">
@@ -17,9 +33,23 @@
         <ul>
     </div>
   <% end %>
-  <% end %>
 </div>
 
 <div class="favorite-recipes">
-
+  <!-- <h3>Receitas favoritas!!</h3>
+  <% @recipes.each do |recipe| %>
+    <div class="floating-box">
+        <div class="inside-floating-box">
+          <%= image_tag(recipe.avatar) %>
+        </div>
+        <ul class="food-information">
+            <li><%= recipe.name %></li>
+            <li>Preparo: <%= recipe.preparation_time %></li>
+            <li>Rendimento: <%= recipe.yield %></li>
+            <li>Cozinha: <%= recipe.cuisine.name %></li>
+            <li><%= link_to 'Ver mais!', action: 'show', id: recipe %></li>
+            <li><%= link_to 'Deletar', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <ul>
+    </div>
+  <% end %> -->
 </div>

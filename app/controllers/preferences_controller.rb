@@ -1,6 +1,6 @@
 class PreferencesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :update, :create]
-  before_action :is_admin
+  before_action :authenticate_user!, only: [:new, :edit, :update, :create, :index]
+  before_action :is_admin, only: [:new, :create, :edit, :update, :index]
 
   def index
     @preferences = Preference.order :name
@@ -39,7 +39,7 @@ class PreferencesController < ApplicationController
   end
 
   def is_admin
-    if current_user.admin == false
+    if current_user == nil || current_user.admin == false
       redirect_to root_path
     end
   end

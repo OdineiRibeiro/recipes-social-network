@@ -1,26 +1,26 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 
- html{ position:relative; min-height: 99.7%; }
+html{ position:relative; min-height: 99.7%; }
 
- body{ margin: 0 0 100px; }
+body{ margin: 0 0 100px; }
 
- nav{ height: 60px; }
+nav{ height: 60px; }
 
- footer{ position: absolute; left: 0; bottom: 0; height: 50px; width: 100%;}
+footer{ position: absolute; left: 0; bottom: 0; height: 50px; width: 100%;}
 
 
  /** COMEÇO MENU SUPERIOR **/
@@ -95,6 +95,11 @@
 
  /** COMEÇO RODAPÉ **/
 
+.footer
+{
+  margin-top;
+}
+
 .footer ul
 {
   background: #888888;
@@ -123,6 +128,11 @@
   border-right: 3px solid #800000;
 }
 
+.floating-box:hover
+{
+  background: #d9d9d9;
+}
+
 .inside-floating-box
 {
   float:left;
@@ -136,7 +146,6 @@
   font-family: 'Oswald', sans-serif;
   height: 100%;
   padding-left: 2%;
-  margin-left: 15%;
 }
 
 .content li
@@ -174,14 +183,22 @@
 
 .last-recipes
 {
-  display: inline-block;
-  width: 40%;
+  float: left;
+  width: 32%;
+  margin-bottom: 5%
 }
 
 .favorite-recipes
 {
-  display: inline-block;
-  width: 40%;
+  float: left;
+  width: 32%;
+  margin-bottom: 5%
+}
+
+.organize-recipes
+{
+  float: left;
+  width: 20%;
 }
 /** FIM INDEX **/
 

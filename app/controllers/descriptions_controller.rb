@@ -1,6 +1,6 @@
 class DescriptionsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :update, :create]
-  before_action :is_admin
+  before_action :authenticate_user!, only: [:new, :edit, :update, :create, :index]
+  before_action :is_admin, only: [:new, :create, :edit, :update, :index]
 
   def index
     @descriptions = Description.order :name
