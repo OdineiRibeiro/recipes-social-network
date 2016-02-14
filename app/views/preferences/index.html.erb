@@ -1,0 +1,16 @@
+<table style="width:80%">
+  <tr>
+    <th>Id</th>
+    <th>Preferencia de pratos</th>
+    <th></th>
+  </tr>
+
+<% @preferences.each do |preference| %>
+  <tr>
+    <td><%= preference.id %></td>
+    <td><%= preference.name %></td>
+    <td><%= link_to 'Editar tipo', action: 'edit', id: preference %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'Cadastrar nova preferencia', new_preference_path %>

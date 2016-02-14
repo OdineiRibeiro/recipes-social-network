@@ -1,0 +1,13 @@
+<ul>
+<% @preference.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+</ul>
+
+<%= form_for @preference do |f| %>
+  Preferencia: <br><%= f.text_field :name %><br/>
+  <%= f.submit %>
+<% end %>
+
+
+<%= link_to 'Pagina de preferências', preferences_path %>
