@@ -1,6 +1,7 @@
 class CuisinesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :create, :index]
   before_action :is_admin, only: [:new, :create, :edit, :update, :index]
+  before_action :set_collection, only: [:show]
 
   def index
     @cuisines = Cuisine.order :name
@@ -32,7 +33,15 @@ class CuisinesController < ApplicationController
     end
   end
 
+  def show
+    
+  end
+
   private
+
+  def set_collection
+    @recipes = Recipe.where('cuisine_id = ?', params[:id])
+  end
 
   def cuisine_params
     params.require(:cuisine).permit(:name)

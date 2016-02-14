@@ -1,6 +1,7 @@
 class DescriptionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :create, :index]
   before_action :is_admin, only: [:new, :create, :edit, :update, :index]
+  before_action :set_collection, only: [:show]
 
   def index
     @descriptions = Description.order :name
@@ -32,7 +33,15 @@ class DescriptionsController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
   private
+
+  def set_collection
+    @recipes = Recipe.where('description_id = ?', params[:id])
+  end
 
   def description_params
     params.require(:description).permit(:name)

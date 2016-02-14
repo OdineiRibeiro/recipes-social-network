@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :recipes
 
-  resources :cuisines, only: [:new, :create, :index, :edit, :update]
-  resources :descriptions, only: [:new, :create, :index, :edit, :update]
-  resources :preferences, only: [:new, :create, :index, :edit, :update]
+  resources :cuisines, only: [:new, :create, :index, :edit, :update, :show]
+  resources :descriptions, only: [:new, :create, :index, :edit, :update, :show]
+  resources :preferences, only: [:new, :create, :index, :edit, :update, :show]
 
   root "recipes#index"
 end

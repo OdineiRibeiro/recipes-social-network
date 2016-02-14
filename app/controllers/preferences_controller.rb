@@ -1,6 +1,7 @@
 class PreferencesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :update, :create, :index]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :create, :index, :show]
   before_action :is_admin, only: [:new, :create, :edit, :update, :index]
+  before_action :set_collection, only: [:show]
 
   def index
     @preferences = Preference.order :name
@@ -32,7 +33,15 @@ class PreferencesController < ApplicationController
     end
   end
 
+  def show
+    
+  end
+
   private
+
+  def set_collection
+    @recipes = Recipe.where('preference_id = ?', params[:id])
+  end
 
   def preference_params
     params.require(:preference).permit(:name)

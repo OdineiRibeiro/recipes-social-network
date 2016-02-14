@@ -1,0 +1,15 @@
+<% @recipes.each do |recipe| %>
+  <div class="floating-box">
+      <div class="inside-floating-box">
+        <%= image_tag(recipe.avatar) %>
+      </div>
+      <ul class="food-information">
+          <li><%= recipe.name %></li>
+          <li>Preparo: <%= recipe.preparation_time %></li>
+          <li>Rendimento: <%= recipe.yield %></li>
+          <li>Cozinha: <%= recipe.cuisine.name %></li>
+          <li><%= link_to 'Ver mais!', recipe_path(recipe.id) %></li>
+          <li><%= link_to 'Deletar', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <ul>
+  </div>
+<% end %>

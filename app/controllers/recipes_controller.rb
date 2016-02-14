@@ -4,8 +4,8 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :create, :destroy]
 
   def index
-    @recipes = Recipe.where('preference_id = ?', 3)
-    #@recipes = Recipe.last(20)
+    #@recipes = Recipe.where('preference_id = ?', 3)
+    @recipes = Recipe.last(20)
   end
 
   def show

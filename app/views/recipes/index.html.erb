@@ -1,16 +1,20 @@
 <div class="organize-recipes">
   <dl>
     <dt>Preferência</dt>
-      <% @preferences.first(3).each do |preference| %>
-        <dd><%= preference.name %></dd>
+      <% @preferences.each do |preference| %>
+        <dd><%= link_to preference.name, preference_path(preference.id) %></dd>
       <% end %>
+  </dl>
+  <dl>
     <dt>Tipo</dt>
-      <% @descriptions.first(3).each do |description| %>
-        <dd><%= description.name %></dd>
+      <% @descriptions.each do |description| %>
+        <dd><%= link_to description.name, description_path(description.id) %></dd>
       <% end %>
+  </dl>
+  <dl>
     <dt>Cozinha</dt>
-    <% @cuisines.first(3).each do |cuisine| %>
-      <dd><%= cuisine.name %></dd>
+    <% @cuisines.each do |cuisine| %>
+      <dd><%= link_to cuisine.name, cuisine_path(cuisine.id) %></dd>
     <% end %>
   </dl>
 </div>
@@ -28,7 +32,7 @@
             <li>Preparo: <%= recipe.preparation_time %></li>
             <li>Rendimento: <%= recipe.yield %></li>
             <li>Cozinha: <%= recipe.cuisine.name %></li>
-            <li><%= link_to 'Ver mais!', action: 'show', id: recipe %></li>
+            <li><%= link_to 'Ver mais!', recipe_path(recipe.id) %></li>
             <li><%= link_to 'Deletar', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></li>
         <ul>
     </div>
