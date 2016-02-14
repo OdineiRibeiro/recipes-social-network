@@ -1,0 +1,29 @@
+<div class="user-information">
+  <ul>
+    <li><h2>Perfil</h2></li>
+    <li><strong>Email:</strong> <%= @user.email %></li>
+    <li><strong>Id:</strong> <%= @user.id %></li>
+  </ul>
+</div>
+
+<div class="last-recipes">
+
+  <h3>Minhas receitas</h3>
+  <% @recipes.each do |recipe| %>
+    <div class="floating-box">
+        <div class="inside-floating-box">
+          <%= image_tag(recipe.avatar) %>
+        </div>
+        <ul class="food-information">
+            <li><%= recipe.name %></li>
+            <li>Preparo: <%= recipe.preparation_time %></li>
+            <li>Rendimento: <%= recipe.yield %></li>
+            <li>Cozinha: <%= recipe.cuisine.name %></li>
+            <li><%= link_to 'Ver mais!', recipe_path(recipe.id) %></li>
+            <% if user_signed_in? && current_user.id == recipe.user.id %>
+              <li><%= link_to 'Deletar', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <% end %>
+        <ul>
+    </div>
+  <% end %>
+</div>
