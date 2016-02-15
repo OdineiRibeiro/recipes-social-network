@@ -28,7 +28,7 @@
           <div class="dropdown">
             <a href="#" class="dropbtn">Menu</a>
             <div class="dropdown-content" >
-              <a href="#">Minhas Receitas</a>
+              <%= link_to 'Meu perfil', user_path(current_user.id) %>
               <%= link_to 'Cadastrar Receitas', new_recipe_path %>
               <a href="#">Mensagens</a>
             </div>
