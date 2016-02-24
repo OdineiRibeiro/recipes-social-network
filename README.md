@@ -20,7 +20,7 @@ Refere-se a uma rede social de receitas. Até o momento, possui as seguintes fun
 - Clone o projeto:
 
 ```
-git clone https://github.com/OdineiRibeiro/recipes-social-network.git
+  git clone https://github.com/OdineiRibeiro/recipes-social-network.git
 ```
 
 - Abra o terminal na pasta criada e digite o comando abaixo para instalar as dependências do projeto
