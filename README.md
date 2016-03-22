@@ -34,6 +34,11 @@ Refere-se a uma rede social de receitas. Até o momento, possui as seguintes fun
   rails server
 ```
 
+## Usuários do sistema
+
+- Usuário comum: user@user.com/123456789
+- Usuário administrador: admin@admin.com/admin1234
+
 ## Mais informações
 
 Para mais informações entre em contato comigo através do [GitHub](https://github.com/OdineiRibeiro) ou através do email odinei.ribeiro@live.com
