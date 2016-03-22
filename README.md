@@ -47,4 +47,4 @@ Refere-se a uma rede social de receitas. Até o momento, possui as seguintes fun
 
 ## Mais informações
 
-Para mais informações entre em contato comigo através do [GitHub](https://github.com/OdineiRibeiro) ou através do email odinei.ribeiro@live.com
+Para mais informações entre em contato comigo através do [GitHub](https://github.com/OdineiRibeiro) ou através do email odinei.ribeiro@live.com!
