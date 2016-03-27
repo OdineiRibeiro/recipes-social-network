@@ -31,8 +31,9 @@ Refere-se a uma rede social de receitas. Até o momento, possui as seguintes fun
 - Em seguida, digite o comando a seguir para criar o banco de dados e suas tabelas
 
 ```ruby
-  rake db:migrate
+  rake db:reset
 ```
+<sup>*Agradeço ao [Pery Lemke](https://github.com/perylemke) por me avisar que o comando acima estava errado :D*</sup>
 
 - Após tudo configurado e banco de dadis migrado. No terminal, inicie o servidor rails com o comando abaixo
 
