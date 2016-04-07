@@ -35,7 +35,7 @@ Refere-se a uma rede social de receitas. Até o momento, possui as seguintes fun
 ```
 <sup>*Agradeço ao [Pery Lemke](https://github.com/perylemke) por avisar que o comando acima estava errado :D*</sup>
 
-- Após tudo configurado e banco de dadis migrado. No terminal, inicie o servidor rails com o comando abaixo
+- Após tudo configurado e banco de dados migrado. No terminal, inicie o servidor rails com o comando abaixo
 
 ```ruby
   rails server
