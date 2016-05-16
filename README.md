@@ -1,4 +1,5 @@
 # README
+[![Code Climate](https://codeclimate.com/github/OdineiRibeiro/recipes-social-network/badges/gpa.svg)](https://codeclimate.com/github/OdineiRibeiro/recipes-social-network)
 
 ## Rede social de receitas
 
